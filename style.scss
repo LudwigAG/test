@@ -1,0 +1,41 @@
+
+
+%frame {
+  display: block;
+  padding: 20px;
+  border: solid 1px #fff;
+}
+
+%frame-1 {
+  @extend %frame;
+  background: green;
+}
+
+%frame-2 {
+  @extend %frame;
+  background: blue;
+}
+
+.start .success {
+  @extend %frame-1;
+}
+
+.home .success {
+  @extend %frame-2;
+}
+
+
+// kompilering
+.start .success, .home.success {
+  display: block;
+  padding: 20px;
+  border: solid 1px #fff;
+}
+
+.start .success {
+  background: green;
+}
+
+.home .success {
+  background: blue;
+}
